@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
     s.authors      = { "Jayel Zaghmoutt" => "eng.jayel.z@gmail.com", "Mohammad Nabulsi" => "mohammad.s.nabulsi@gmail.com" }
     s.ios.deployment_target = '9.0'
 
-    s.source       = { :git => "https://github.com/JNDisrupter/JNAvatarWithInitials.git", :tag => "#{s.version}" }
+    s.source       = { :git => "https://github.com/JNDisrupter/JNAvatarWithInitials.git"}
 
     s.source_files = "JNAvatarWithInitials/**/*.{swift}"
 
