@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="R4M-Nh-g6E">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="dnt-v1-OBQ">
+            <objects>
+                <navigationController id="R4M-Nh-g6E" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TA5-wA-ayb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Q6a-gl-6pz" kind="relationship" relationship="rootViewController" id="CSF-4f-n8c"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OTa-1n-Fy0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1508" y="-61"/>
+        </scene>
+        <!--Example-->
+        <scene sceneID="W6b-s7-ZMs">
+            <objects>
+                <viewController id="Q6a-gl-6pz" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RQY-P0-Jdv"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xta-b5-aBd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Meb-t3-8F9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Rx-nV-bIP" customClass="JNAvatarWithInitials" customModule="JNAvatarWithInitials">
+                                <rect key="frame" x="20" y="84" width="112.5" height="112.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5Rx-nV-bIP" secondAttribute="height" multiplier="1:1" id="PeZ-jI-fcq"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fG4-zY-gvU" customClass="JNAvatarWithInitials" customModule="JNAvatarWithInitials">
+                                <rect key="frame" x="20" y="216.5" width="113.5" height="113.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jrF-3v-Rnl" customClass="JNAvatarWithInitials" customModule="JNAvatarWithInitials">
+                                <rect key="frame" x="242.5" y="216.5" width="112.5" height="112.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jrF-3v-Rnl" secondAttribute="height" multiplier="1:1" id="2OT-46-Mnj"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hh0-Gl-kDQ" customClass="JNAvatarWithInitials" customModule="JNAvatarWithInitials">
+                                <rect key="frame" x="242.5" y="84" width="112.5" height="112.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Hh0-Gl-kDQ" secondAttribute="height" multiplier="1:1" id="h9U-hL-miz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Hh0-Gl-kDQ" firstAttribute="width" secondItem="Meb-t3-8F9" secondAttribute="width" multiplier="0.3" id="7mc-I7-Emt"/>
+                            <constraint firstAttribute="trailing" secondItem="jrF-3v-Rnl" secondAttribute="trailing" constant="20" id="BLe-Zx-1NN"/>
+                            <constraint firstItem="5Rx-nV-bIP" firstAttribute="width" secondItem="Meb-t3-8F9" secondAttribute="width" multiplier="0.3" id="KR9-sm-iXQ"/>
+                            <constraint firstItem="Hh0-Gl-kDQ" firstAttribute="top" secondItem="RQY-P0-Jdv" secondAttribute="bottom" constant="20" id="U3p-wT-Wen"/>
+                            <constraint firstItem="5Rx-nV-bIP" firstAttribute="leading" secondItem="Meb-t3-8F9" secondAttribute="leading" constant="20" id="Upo-vv-iDt"/>
+                            <constraint firstItem="fG4-zY-gvU" firstAttribute="top" secondItem="5Rx-nV-bIP" secondAttribute="bottom" constant="20" id="bJA-Jx-zPg"/>
+                            <constraint firstItem="fG4-zY-gvU" firstAttribute="leading" secondItem="Meb-t3-8F9" secondAttribute="leading" constant="20" id="bnO-zu-bgw"/>
+                            <constraint firstItem="5Rx-nV-bIP" firstAttribute="top" secondItem="RQY-P0-Jdv" secondAttribute="bottom" constant="20" id="dWs-lw-Jj2"/>
+                            <constraint firstItem="jrF-3v-Rnl" firstAttribute="width" secondItem="Meb-t3-8F9" secondAttribute="width" multiplier="0.3" id="hqB-DA-uiC"/>
+                            <constraint firstItem="fG4-zY-gvU" firstAttribute="width" secondItem="fG4-zY-gvU" secondAttribute="height" multiplier="1:1" id="jng-OQ-7Gd"/>
+                            <constraint firstItem="fG4-zY-gvU" firstAttribute="width" secondItem="Meb-t3-8F9" secondAttribute="width" multiplier="0.3" constant="1" id="pYM-nX-Pu8"/>
+                            <constraint firstItem="jrF-3v-Rnl" firstAttribute="top" secondItem="Hh0-Gl-kDQ" secondAttribute="bottom" constant="20" id="pnO-Ae-NRp"/>
+                            <constraint firstItem="jrF-3v-Rnl" firstAttribute="width" secondItem="jrF-3v-Rnl" secondAttribute="height" multiplier="1:1" id="vJF-rl-uiv"/>
+                            <constraint firstItem="Hh0-Gl-kDQ" firstAttribute="width" secondItem="Hh0-Gl-kDQ" secondAttribute="height" multiplier="1:1" id="w7Y-KM-pFf"/>
+                            <constraint firstAttribute="trailing" secondItem="Hh0-Gl-kDQ" secondAttribute="trailing" constant="20" id="wvp-jp-EF5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Example" id="9nU-yk-rag"/>
+                    <connections>
+                        <outlet property="avatarImage1" destination="5Rx-nV-bIP" id="kZ6-8d-iAy"/>
+                        <outlet property="avatarImage2" destination="Hh0-Gl-kDQ" id="uEH-Um-GIl"/>
+                        <outlet property="avatarImage3" destination="fG4-zY-gvU" id="7nF-8B-Dmg"/>
+                        <outlet property="avatarImage4" destination="jrF-3v-Rnl" id="GGR-Lz-e7G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tm6-tI-FdE" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-574" y="-62"/>
+        </scene>
+    </scenes>
+</document>

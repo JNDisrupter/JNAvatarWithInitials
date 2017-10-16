@@ -10,7 +10,6 @@
 		84C3C6131F69CF9E00954B3D /* JNAvatarWithInitials.h in Headers */ = {isa = PBXBuildFile; fileRef = 84C3C6111F69CF9E00954B3D /* JNAvatarWithInitials.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84C3C61A1F69D0FA00954B3D /* JNAvatarWithInitials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3C6191F69D0FA00954B3D /* JNAvatarWithInitials.swift */; };
 		84C3C61C1F6A82E800954B3D /* JNAvatarWithInitials.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C3C61B1F6A82E800954B3D /* JNAvatarWithInitials.xib */; };
-		A27D7927013FECD4E3A279DC /* Pods_JNAvatarWithInitials.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20238DC253C1FF9F6A4B466 /* Pods_JNAvatarWithInitials.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A27D7927013FECD4E3A279DC /* Pods_JNAvatarWithInitials.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
