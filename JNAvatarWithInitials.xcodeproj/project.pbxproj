@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84A8D4F71FAB8F46002A599E /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A8D4F81FAB8F46002A599E /* SDWebImage.framework */; };
 		84C3C6131F69CF9E00954B3D /* JNAvatarWithInitials.h in Headers */ = {isa = PBXBuildFile; fileRef = 84C3C6111F69CF9E00954B3D /* JNAvatarWithInitials.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84C3C61A1F69D0FA00954B3D /* JNAvatarWithInitials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3C6191F69D0FA00954B3D /* JNAvatarWithInitials.swift */; };
 		84C3C61C1F6A82E800954B3D /* JNAvatarWithInitials.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C3C61B1F6A82E800954B3D /* JNAvatarWithInitials.xib */; };
@@ -14,6 +15,7 @@
 
 /* Begin PBXFileReference section */
 		529F28A1CE4872C107163BD3 /* Pods-JNAvatarWithInitials.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JNAvatarWithInitials.release.xcconfig"; path = "Pods/Target Support Files/Pods-JNAvatarWithInitials/Pods-JNAvatarWithInitials.release.xcconfig"; sourceTree = "<group>"; };
+		84A8D4F81FAB8F46002A599E /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C3C60E1F69CF9E00954B3D /* JNAvatarWithInitials.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JNAvatarWithInitials.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C3C6111F69CF9E00954B3D /* JNAvatarWithInitials.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JNAvatarWithInitials.h; sourceTree = "<group>"; };
 		84C3C6121F69CF9E00954B3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -28,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A8D4F71FAB8F46002A599E /* SDWebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +69,7 @@
 		8AC41709C6D3496E192B1CE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84A8D4F81FAB8F46002A599E /* SDWebImage.framework */,
 				E20238DC253C1FF9F6A4B466 /* Pods_JNAvatarWithInitials.framework */,
 			);
 			name = Frameworks;
