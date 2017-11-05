@@ -49,7 +49,7 @@ open class JNAvatarWithInitials: UIView {
         }
     }
     
-    /// Initials text color
+    /// Initials label insets
     open var initialLabelInset = UIEdgeInsets.zero {
         didSet {
             
@@ -65,9 +65,8 @@ open class JNAvatarWithInitials: UIView {
     }
     
     /**
-     Loads a view instance from the xib file
-     
-     - returns: loaded view
+       Loads a view instance from the xib file
+      - returns: loaded view
      */
     private func loadViewFromXibFile() -> UIView {
         let bundle = Bundle(for: JNAvatarWithInitials.self)
@@ -78,14 +77,14 @@ open class JNAvatarWithInitials: UIView {
     }
     
     /**
-     * Default initializer
-     **/
+     Default initializer
+     */
     convenience init() {
         self.init(frame: CGRect())
     }
     
     /**
-     Initialiser method
+     Initialiser method with frame
      */
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -95,7 +94,7 @@ open class JNAvatarWithInitials: UIView {
     }
     
     /**
-     Initialiser method
+     Initialiser method with NSCoder
      */
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -128,8 +127,8 @@ open class JNAvatarWithInitials: UIView {
     }
     
     /**
-      Layout subviews
-     **/
+     Layout subviews
+     */
     override open func layoutSubviews() {
         super.layoutSubviews()
         
@@ -142,8 +141,8 @@ open class JNAvatarWithInitials: UIView {
      Setup view
      - parameter imageUrl: The image url to load
      - parameter placeHolderImage: Place holder image
-     - parameter fullName: Full name which will be user to set initials
-     - parameter showInitails: boolean to indicate if the initials should show if the image is failed or not
+     - parameter fullName: Full name which will be used to set initials
+     - parameter showInitails: boolean to indicate if the initials should appear
      */
     open func setup(imageUrl : String , placeHolderImage : UIImage! = nil , fullName : String , showInitails : Bool = false) {
         
@@ -186,12 +185,12 @@ open class JNAvatarWithInitials: UIView {
     
     /**
      Setup view
-     - parameter imageName: The image name in the assets to display
+     - parameter image: The uiimage to load
      - parameter placeHolderImage: Place holder image
-     - parameter fullName: Full name which will be user to set initials
-     - parameter showInitails: boolean to indicate if the initials should show if the image is failed or not
+     - parameter fullName: Full name which will be used to set initials
+     - parameter showInitails: boolean to indicate if the initials should appear
      */
-    open func setup(imageName : String , placeHolderImage : UIImage! = nil , fullName : String , showInitails : Bool = false) {
+    open func setup(image : UIImage? , placeHolderImage : UIImage! = nil , fullName : String , showInitails : Bool = false) {
         
         // Reset view
         self.resetView()
@@ -203,7 +202,7 @@ open class JNAvatarWithInitials: UIView {
         self.initialsLabel.isHidden = true
         
         // Get image from image name
-        if let image = UIImage(named: imageName) {
+        if let image = image {
             
             // Set image
             self.avatarImage.image = image
@@ -220,7 +219,7 @@ open class JNAvatarWithInitials: UIView {
     
     /**
      Reset view
-     **/
+     */
     private func resetView() {
         
         // Reset image
@@ -233,8 +232,9 @@ open class JNAvatarWithInitials: UIView {
     
     /**
      Show Initials
-     **/
-    private func showInitials(fullName : String){
+     - parameter fullName: The full name
+     */
+    private func showInitials(fullName : String) {
         
         // Reset image
         self.avatarImage.image = nil
@@ -245,16 +245,18 @@ open class JNAvatarWithInitials: UIView {
         // Build initails text
         var initialsString = ""
         
-        if displayNameArray.isEmpty {
-            // TODO : - what to do if empty
-        } else if displayNameArray.count > 1 {
-            if let firstCharacter = displayNameArray[0].characters.first , let secondCharachter = displayNameArray[1].characters.first {
-                initialsString = String(describing: firstCharacter) + String(describing: secondCharachter)
+        if !displayNameArray.isEmpty {
+            
+            // Check if there is first and last name
+            if displayNameArray.count > 1 {
+                if let firstCharacter = displayNameArray[0].first , let secondCharachter = displayNameArray[1].first {
+                    initialsString = String(describing: firstCharacter) + String(describing: secondCharachter)
+                }
+            } else if displayNameArray[0].count > 1 {
+                let index = displayNameArray[0].index(displayNameArray[0].startIndex, offsetBy: 2)
+                initialsString = String(displayNameArray[0][..<index])
             }
-        } else if displayNameArray[0].characters.count > 1 {
-            let index = displayNameArray[0].index(displayNameArray[0].startIndex, offsetBy: 2)
-            initialsString = String(displayNameArray[0][..<index])
-       }
+        }
         
         // Set initials text
         self.initialsLabel.text = initialsString.uppercased()
