@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/JNAvatarWithInitials.svg?style=flat)](http://cocoapods.org/pods/JNAvatarWithInitials)
 [![Platform](https://img.shields.io/cocoapods/p/JNAvatarWithInitials.svg?style=flat)](http://cocoapods.org/pods/JNAvatarWithInitials)
 
+## Screenshots
+![ScreenShot1](https://github.com/JNDisrupter/JNAvatarWithInitials/raw/master/Images/screenshot1.png)
 ## Installation
 
 JNAvatarWithInitials is available through [CocoaPods](http://cocoapods.org). To install
