@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name         = "JNAvatarWithInitials"
-    s.version      = "1.0.2"
+    s.version      = "1.0.3"
     s.summary      = "Summery of JNAvatarWithInitials."
     s.description  = 'This is a description for this library'
     s.homepage     = "https://github.com/JNDisrupter"
