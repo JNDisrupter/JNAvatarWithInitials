@@ -33,7 +33,7 @@ To integrate JNAvatarWithInitials into your Xcode project using CocoaPods, speci
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'JNAvatarWithInitials', '~> 4.5'
+    pod 'JNAvatarWithInitials'
 end
 ```
 
