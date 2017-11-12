@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 import SDWebImage
 
+/// Image completion block
+public typealias ImageCompletionBlock = (UIImage?, Error? , URL?) -> Void
+
 /// Avatar with initilas on it if needed
 open class JNAvatarWithInitials: UIView {
     
@@ -64,9 +67,21 @@ open class JNAvatarWithInitials: UIView {
         }
     }
     
+    /// Avatar content mode
+    open var avatarContentMode : UIViewContentMode = UIViewContentMode.scaleAspectFit {
+        didSet {
+            
+            // Set image content mode
+            self.avatarImage.contentMode = self.avatarContentMode
+            
+            // Call display
+            self.setNeedsDisplay()
+        }
+    }
+    
     /**
-       Loads a view instance from the xib file
-      - returns: loaded view
+     Loads a view instance from the xib file
+     - returns: loaded view
      */
     private func loadViewFromXibFile() -> UIView {
         let bundle = Bundle(for: JNAvatarWithInitials.self)
@@ -144,13 +159,13 @@ open class JNAvatarWithInitials: UIView {
      - parameter fullName: Full name which will be used to set initials
      - parameter showInitails: boolean to indicate if the initials should appear
      */
-    open func setup(imageUrl : String , placeHolderImage : UIImage! = nil , fullName : String , showInitails : Bool = false) {
+    open func setup(imageUrl : String , placeHolderImage : UIImage! = nil , fullName : String , showInitails : Bool = false , completion : ImageCompletionBlock? = nil) {
         
         // Reset view
         self.resetView()
         
         // Set iamge view content mode
-        self.avatarImage.contentMode = UIViewContentMode.scaleAspectFill
+        self.avatarImage.contentMode = self.avatarContentMode
         
         // hide name label
         self.initialsLabel.isHidden = true
@@ -175,11 +190,30 @@ open class JNAvatarWithInitials: UIView {
                         self.avatarImage.image = placeHolderImage
                     }
                 }
+                
+                // Call completion
+                if let completion = completion {
+                    completion(self.avatarImage.image,error,imageURL)
+                }
             })
         } else if showInitails {
             
             // Show initialis
             self.showInitials(fullName: fullName)
+            
+            // Call completion
+            if let completion = completion {
+                completion(nil,nil,nil)
+            }
+        } else {
+            
+            // Set placeholder image
+            self.avatarImage.image = placeHolderImage
+            
+            // Call completion
+            if let completion = completion {
+                completion(placeHolderImage,nil,nil)
+            }
         }
     }
     
@@ -190,13 +224,13 @@ open class JNAvatarWithInitials: UIView {
      - parameter fullName: Full name which will be used to set initials
      - parameter showInitails: boolean to indicate if the initials should appear
      */
-    open func setup(image : UIImage? , placeHolderImage : UIImage! = nil , fullName : String , showInitails : Bool = false) {
+    open func setup(image : UIImage? , placeHolderImage : UIImage! = nil , fullName : String , showInitails : Bool = false , completion : ImageCompletionBlock? = nil) {
         
         // Reset view
         self.resetView()
         
         // Set iamge view content mode
-        self.avatarImage.contentMode = UIViewContentMode.scaleAspectFill
+        self.avatarImage.contentMode = self.avatarContentMode
         
         // hide name label
         self.initialsLabel.isHidden = true
@@ -214,6 +248,11 @@ open class JNAvatarWithInitials: UIView {
             
             // Set placeholder image
             self.avatarImage.image = placeHolderImage
+        }
+        
+        // Call completion
+        if let completion = completion {
+            completion(self.avatarImage.image,nil,nil)
         }
     }
     
@@ -247,14 +286,16 @@ open class JNAvatarWithInitials: UIView {
         
         if !displayNameArray.isEmpty {
             
-            // Check if there is first and last name
-            if displayNameArray.count > 1 {
-                if let firstCharacter = displayNameArray[0].first , let secondCharachter = displayNameArray[1].first {
-                    initialsString = String(describing: firstCharacter) + String(describing: secondCharachter)
-                }
-            } else if displayNameArray[0].count > 1 {
+            if displayNameArray.count == 1 && displayNameArray[0].count > 1 {
                 let index = displayNameArray[0].index(displayNameArray[0].startIndex, offsetBy: 2)
                 initialsString = String(displayNameArray[0][..<index])
+            }
+                
+                // Check if there is first and last name
+            else if displayNameArray.count > 1 {
+                if let firstCharacter = displayNameArray.first?.first , let secondCharachter = displayNameArray.last?.first {
+                    initialsString = String(describing: firstCharacter) + String(describing: secondCharachter)
+                }
             }
         }
         
