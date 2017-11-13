@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
     s.resources = "JNAvatarWithInitials/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
     s.screenshots      = "https://github.com/JNDisrupter/JNAvatarWithInitials/raw/master/Images/screenshot1.png"	
     s.framework  = "UIKit"
-    s.dependency 'SDWebImage'
+    s.dependency 'SDWebImage','~> 4.2.2'
 end

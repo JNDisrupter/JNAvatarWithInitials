@@ -68,7 +68,7 @@ open class JNAvatarWithInitials: UIView {
     }
     
     /// Avatar content mode
-    open var avatarContentMode : UIViewContentMode = UIViewContentMode.scaleAspectFit {
+    open var avatarContentMode : UIViewContentMode = UIViewContentMode.scaleAspectFill {
         didSet {
             
             // Set image content mode
