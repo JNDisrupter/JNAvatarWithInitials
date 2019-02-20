@@ -305,4 +305,12 @@ open class JNAvatarWithInitials: UIView {
         // Show initials Label
         self.initialsLabel.isHidden = false
     }
+    
+    /**
+     Get image view
+     - Returns: avatar image view
+     */
+    open func getImageView() -> UIImageView {
+        return self.avatarImage
+    }
 }

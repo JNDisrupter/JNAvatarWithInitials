@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
     s.source       = { :git => "https://github.com/JNDisrupter/JNAvatarWithInitials.git" , :tag => "#{s.version}"}
     s.source_files = "JNAvatarWithInitials/**/*.{swift}"
     s.resources = "JNAvatarWithInitials/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
-    s.screenshots      = "https://github.com/JNDisrupter/JNAvatarWithInitials/raw/master/Images/screenshot1.png"	
+    s.screenshots      = "https://github.com/JNDisrupter/JNAvatarWithInitials/raw/master/Images/screenshot1.png"    
     s.framework  = "UIKit"
     s.dependency 'SDWebImage','~> 4.4.2'
 end
