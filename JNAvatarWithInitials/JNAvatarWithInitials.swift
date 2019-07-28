@@ -175,24 +175,25 @@ open class JNAvatarWithInitials: UIView {
             
             // Setup avatar image
             self.avatarImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
-            self.avatarImage.sd_setImage(with: URL(string:imageUrl), placeholderImage: placeHolderImage, options: SDWebImageOptions.continueInBackground, completed: { (image, error,  cacheType, imageURL) in
+            self.avatarImage.sd_setImage(with: URL(string:imageUrl), placeholderImage: placeHolderImage, options: SDWebImageOptions.continueInBackground, completed: { [ weak self] (image, error,  cacheType, imageURL) in
                 
+                guard let strongSelf = self else {return}
                 if error != nil {
                     
                     if showInitails {
                         
                         // Show initialis
-                        self.showInitials(fullName: fullName)
+                        strongSelf.showInitials(fullName: fullName)
                     } else {
                         
                         // Set placeholder image
-                        self.avatarImage.image = placeHolderImage
+                        strongSelf.avatarImage.image = placeHolderImage
                     }
                 }
                 
                 // Call completion
                 if let completion = completion {
-                    completion(self.avatarImage.image,error,imageURL)
+                    completion(strongSelf.avatarImage.image,error,imageURL)
                 }
             })
         } else if showInitails {
@@ -266,6 +267,10 @@ open class JNAvatarWithInitials: UIView {
         // Reset intialis label
         self.initialsLabel.isHidden = true
         self.initialsLabel.text = ""
+        
+        // Cancel sd webimage download
+        self.avatarImage.sd_cancelCurrentImageLoad()
+        self.avatarImage.sd_imageIndicator = nil
     }
     
     /**

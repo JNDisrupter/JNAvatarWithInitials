@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name         				= "JNAvatarWithInitials"
-    s.version      				= "1.1.4"
+    s.version      				= "1.1.5"
     s.summary      				= "Avatar with initials"
     s.description  			 	= "JNAvatarWithInitials is used to show single avatar image usign web url or UIImage object and have the option to show initials."
     s.homepage     				= "https://github.com/JNDisrupter"
