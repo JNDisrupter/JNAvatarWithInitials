@@ -8,6 +8,7 @@
 
 import UIKit
 import JNAvatarWithInitials
+import CoreImage.CIFilterBuiltins
 
 class ViewController: UIViewController {
 
@@ -15,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var avatarImage2: JNAvatarWithInitials!
     @IBOutlet weak var avatarImage3: JNAvatarWithInitials!
     @IBOutlet weak var avatarImage4: JNAvatarWithInitials!
+    @IBOutlet weak var avatarImage5: JNAvatarWithInitials!
+    @IBOutlet weak var avatarImage6: JNAvatarWithInitials!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +47,22 @@ class ViewController: UIViewController {
         self.avatarImage4.layer.borderColor = UIColor.black.cgColor
         self.avatarImage4.layer.borderWidth = 1
         self.avatarImage4.clipsToBounds = true
+        
+        // Tonale filter
+        let imageTonalFilter = CIFilter.photoEffectTonal()
+        
+        // Filtered avatar image
+        self.avatarImage5.setup(imageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/36/Hopetoun_falls.jpg", fullName: "Test image", showInitails: true, imageFilter: imageTonalFilter)
+        self.avatarImage5.initialTextColor = UIColor.blue
+        self.avatarImage5.backgroundColor = UIColor.lightGray
+        
+        // Filtered avatar image with borders
+        self.avatarImage6.setup(imageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/36/Hopetoun_falls.jpg", fullName: "Test image", showInitails: true, imageFilter: imageTonalFilter)
+        self.avatarImage6.initialTextColor = UIColor.blue
+        self.avatarImage6.backgroundColor = UIColor.lightGray
+        self.avatarImage6.layer.borderColor = UIColor.black.cgColor
+        self.avatarImage6.layer.borderWidth = 1
+        self.avatarImage6.clipsToBounds = true
     }
 
     override func viewWillLayoutSubviews() {
@@ -52,6 +71,7 @@ class ViewController: UIViewController {
         // Round avatar image
         self.avatarImage2.layer.cornerRadius = self.avatarImage2.bounds.width / 2
         self.avatarImage4.layer.cornerRadius = self.avatarImage4.bounds.width / 2
+        self.avatarImage6.layer.cornerRadius = self.avatarImage6.bounds.width / 2
     }
    
     
