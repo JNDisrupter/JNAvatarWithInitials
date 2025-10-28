@@ -58,9 +58,14 @@ class ViewController: UIViewController {
         
         // Filtered avatar image with borders
         self.avatarImage6.setup(imageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/36/Hopetoun_falls.jpg", fullName: "Test image", showInitails: true, imageFilter: imageTonalFilter)
-        self.avatarImage6.initialTextColor = UIColor.blue
-        self.avatarImage6.backgroundColor = UIColor.lightGray
-        self.avatarImage6.layer.borderColor = UIColor.black.cgColor
+        
+        // Inital theme
+        let initialTheme = JNInitialThemes.tonal.getTheme()
+        self.avatarImage6.initialTextColor = initialTheme.textColor
+        self.avatarImage6.backgroundColor = initialTheme.backgroundColor
+        
+        // Set Layer theme
+        self.avatarImage6.layer.borderColor = initialTheme.backgroundColor.cgColor
         self.avatarImage6.layer.borderWidth = 1
         self.avatarImage6.clipsToBounds = true
     }
