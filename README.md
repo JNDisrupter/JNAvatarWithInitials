@@ -8,13 +8,13 @@
 **JNAvatarWithInitials** is used to show single avatar image usign web url or UIImage object and have the option to show initials.
 
 ## Screenshots
-![ScreenShot1](https://github.com/JNDisrupter/JNAvatarWithInitials/raw/support-image-filter/Images/screenshot2.png)
+<img src="Images/screenshot2.png" width="280"/> 
 
 ## Requirements
 
-- iOS 9.0+ / macOS 10.10+
-- Xcode 9.0+
-- Swift 4+
+- iOS 11.0+ / macOS 15.6+
+- Xcode 16.0+
+- Swift 5.10+
 
 ## Installation
 
