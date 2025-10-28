@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SDWebImage
+import CoreImage
 
 /// Image completion block
 public typealias ImageCompletionBlock = (UIImage?, Error? , URL?) -> Void
@@ -158,8 +159,10 @@ open class JNAvatarWithInitials: UIView {
      - parameter placeHolderImage: Place holder image
      - parameter fullName: Full name which will be used to set initials
      - parameter showInitails: boolean to indicate if the initials should appear
+     - Parameter imageFilter: CIFilter
+     - Parameter completion : Image completion block
      */
-    open func setup(imageUrl : String , placeHolderImage : UIImage! = nil , fullName : String , showInitails : Bool = false , completion : ImageCompletionBlock? = nil) {
+    open func setup(imageUrl : String , placeHolderImage : UIImage! = nil, fullName : String , showInitails : Bool = false, imageFilter: CIFilter? = nil, completion : ImageCompletionBlock? = nil) {
         
         // Reset view
         self.resetView()
@@ -173,9 +176,21 @@ open class JNAvatarWithInitials: UIView {
         // Check if image url is empty
         if !imageUrl.isEmpty {
             
+            // Context
+            var context: [SDWebImageContextOption : Any]? = nil
+            
+            if let imageFilter = imageFilter {
+                
+                // Image filter transformar
+                let transformer = SDImageFilterTransformer(filter: imageFilter)
+                
+                // Set image transformer to context
+                context = [.imageTransformer: transformer]
+            }
+            
             // Setup avatar image
             self.avatarImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
-            self.avatarImage.sd_setImage(with: URL(string:imageUrl), placeholderImage: placeHolderImage, options: SDWebImageOptions.continueInBackground, completed: { [ weak self] (image, error,  cacheType, imageURL) in
+            self.avatarImage.sd_setImage(with: URL(string:imageUrl), placeholderImage: placeHolderImage, options: SDWebImageOptions.continueInBackground, context: context, progress: nil, completed: { [ weak self] (image, error,  cacheType, imageURL) in
                 
                 guard let strongSelf = self else {return}
                 if error != nil {
