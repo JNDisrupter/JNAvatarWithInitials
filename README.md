@@ -8,7 +8,7 @@
 **JNAvatarWithInitials** is used to show single avatar image usign web url or UIImage object and have the option to show initials.
 
 ## Screenshots
-![ScreenShot1](https://github.com/JNDisrupter/JNAvatarWithInitials/raw/master/Images/screenshot1.png)
+![ScreenShot1](https://github.com/JNDisrupter/JNAvatarWithInitials/raw/support-image-filter/Images/screenshot2.png)
 
 ## Requirements
 
@@ -61,13 +61,14 @@ $ pod install
   > Setup view using image url 
 
 ```swift
-func setup(imageUrl : String , placeHolderImage : UIImage , fullName : String , showInitails)
+func setup(imageUrl : String , placeHolderImage : UIImage , fullName : String , showInitails، imageFilter: CIFilter)
 ```
  ##### parameters
  * imageUrl : The image url to use for loading image.
  * placeHolderImage : The placeholder image to use when failed.
  * fullName : The full name to use for initials.
  * showInitails : Flag to indicate if should show initials or not.
+ * imageFilter : CIFilter to be applyed to the image. 
  
 
   > Setup view using UIImage 
