@@ -85,7 +85,7 @@ open class JNAvatarWithInitials: UIView {
      - returns: loaded view
      */
     private func loadViewFromXibFile() -> UIView {
-        let bundle = Bundle(for: JNAvatarWithInitials.self)
+        let bundle = Bundle.module
         let nib = UINib(nibName: "JNAvatarWithInitials", bundle: bundle)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         view.autoresizingMask = [.flexibleHeight,.flexibleWidth]

@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JNAvatarWithInitials" customModule="JNAvatarWithInitials" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JNAvatarWithInitials" customModule="JNAvatarWithInitials">
             <connections>
                 <outlet property="avatarImage" destination="Bdh-r5-nrE" id="cAS-qK-9t6"/>
                 <outlet property="initialLabelBottomConstraint" destination="Qpv-Ca-kid" id="080-Mk-0Uh"/>
@@ -46,7 +44,7 @@
                 <constraint firstAttribute="bottom" secondItem="Bdh-r5-nrE" secondAttribute="bottom" id="rmC-bd-9Ni"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-44" y="-144.5"/>
+            <point key="canvasLocation" x="-70.400000000000006" y="-129.98500749625188"/>
         </view>
     </objects>
 </document>
