@@ -25,9 +25,6 @@ let package = Package(
             name: "JNAvatarWithInitials",
             dependencies: [
                 "SDWebImage"
-            ],
-            resources: [
-                .process("Resources"),
             ]),
     ]
 )
