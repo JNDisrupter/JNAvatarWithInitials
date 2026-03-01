@@ -8,7 +8,7 @@
 **JNAvatarWithInitials** is used to show single avatar image usign web url or UIImage object and have the option to show initials.
 
 ## Screenshots
-![ScreenShot1](https://github.com/JNDisrupter/JNAvatarWithInitials/raw/support-image-filter/Images/screenshot2.png)
+<img src="Images/screenshot2.png" width="280"/> 
 
 ## Requirements
 
