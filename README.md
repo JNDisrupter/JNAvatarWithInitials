@@ -16,7 +16,7 @@
 - Xcode 15.3+
 - Swift 5.10+
 
-## Installation
+## Installation with Swift Package Manager
 
 JNAvatarWithInitials support SwiftPM. To use SwiftPM, you should use Xcode 15.3 to open your project. Click `File` -> `Swift Packages` -> `Add Package Dependency`, enter [JNAvatarWithInitials repo's URL](https://github.com/JNDisrupter/JNAvatarWithInitials.git)
 
