@@ -12,13 +12,13 @@
 
 ## Requirements
 
-- iOS 12.0+ / macOS 14.4+
-- Xcode 15.3+
+- iOS 12.0+ / macOS 15.7+
+- Xcode 26+
 - Swift 5.10+
 
 ## Installation with Swift Package Manager
 
-JNAvatarWithInitials support SwiftPM. To use SwiftPM, you should use Xcode 15.3 to open your project. Click `File` -> `Swift Packages` -> `Add Package Dependency`, enter [JNAvatarWithInitials repo's URL](https://github.com/JNDisrupter/JNAvatarWithInitials.git)
+JNAvatarWithInitials support SwiftPM. To use SwiftPM, you should use Xcode 26 to open your project. Click `File` -> `Swift Packages` -> `Add Package Dependency`, enter [JNAvatarWithInitials repo's URL](https://github.com/JNDisrupter/JNAvatarWithInitials.git)
 
 ## Usage
 
